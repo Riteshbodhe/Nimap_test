@@ -1,0 +1,71 @@
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem 3rem;
+    padding: 2rem;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  
+  .movie-card {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    color: white;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  }
+  
+  .movie-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #444;
+  }
+  
+  .movie-card h3 {
+    margin: 0.8rem 0 0.2rem;
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+  
+  .movie-card p {
+    margin-bottom: 1rem;
+    color: #ccc;
+    font-size: 0.9rem;
+  }
+  
+  /* Optional: Pagination Styling */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    gap: 1rem;
+  }
+  
+  .pagination button {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .pagination button:disabled {
+    background-color: #666;
+    cursor: not-allowed;
+  }
+  
+  .pagination span {
+    color: white;
+    font-weight: 500;
+  }
+  
