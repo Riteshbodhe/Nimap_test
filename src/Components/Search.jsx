@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import MovieCard from "./MovieCard"; 
 
 
 const Search = ({ query, setMovie }) => {
@@ -23,15 +24,14 @@ const Search = ({ query, setMovie }) => {
   
 
   return (
+  
+   
     <div className="movie-grid">
       {movies.length > 0 ? (
         movies.map((movie) => (
-          <div className="movie-card" key={movie.id}>
-             <Link to={`/movie/${movie.id}`  }  onClick={()=>handleClick( movie)} >
-            <img src={`${img_url}${movie.poster_path}`} alt={movie.title} />
-            <h3>{movie.title}</h3>
-            <p>Rating: {movie.vote_average}</p></Link>
-          </div>
+          <Link to={`/movie/${movie.id}`} key={movie.id} onClick={() => handleClick(movie)}>
+            <MovieCard movie={movie} />
+          </Link>
         ))
       ) : (
         <p style={{ padding: "2rem", color: "white" }}>No results found....</p>

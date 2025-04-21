@@ -122,3 +122,73 @@
   color: white;
   text-align: center;
 }
+
+
+@media (max-width: 1024px) {
+  .main-section {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left-section {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    background: linear-gradient(to bottom, #0d0d0d 60%, transparent 100%);
+  }
+
+  .poster {
+    margin: 0 0 1.5rem;
+    width: 180px;
+    height: 270px;
+  }
+
+  .movie-details {
+    align-items: center;
+    text-align: center;
+  }
+
+  .overview {
+    max-width: 100%;
+  }
+
+  .right-section {
+    display: none; 
+  }
+
+  .cast-section {
+    padding: 1.5rem;
+  }
+
+  .cast-grid {
+    gap: 1rem;
+  }
+
+  .cast-card {
+    width: 140px;
+  }
+
+  .cast-card img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .poster {
+    width: 150px;
+    height: 225px;
+  }
+
+  .movie-details h2 {
+    font-size: 1.5rem;
+  }
+
+  .cast-card {
+    width: 120px;
+  }
+
+  .cast-card img {
+    height: 180px;
+  }
+}

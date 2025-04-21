@@ -6,7 +6,7 @@
     max-width: 1300px;
     margin: 0 auto;
   }
-  
+   
   .movie-card {
     background-color: #2a2a2a;
     border-radius: 10px;
@@ -40,7 +40,7 @@
     font-size: 0.9rem;
   }
   
-  /* Optional: Pagination Styling */
+  
   .pagination {
     display: flex;
     justify-content: center;
@@ -69,3 +69,41 @@
     font-weight: 500;
   }
   
+
+  /* Responsive Movie Grid */
+@media (max-width: 1024px) {
+  .movie-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+}
+
+/* Responsive Pagination */
+@media (max-width: 768px) {
+  .pagination {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .pagination button {
+    width: 100%;
+    max-width: 200px;
+  }
+}

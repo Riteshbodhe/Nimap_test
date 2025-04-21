@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import './Home.css'
+import MovieCard from "./MovieCard";
+import Pagination from "./Pagination";
 
 
 const Home = (props) => {
@@ -30,25 +32,21 @@ const Home = (props) => {
  
   return (
     <>
-    <div className="movie-grid">
-     
-      {movies.map((movie) => (
-        <div className="movie-card" key={movie.id}>
-           <Link to={`/movie/${movie.id}`} onClick={()=>handleClick({ id: movie.id})}   >
-          <img src={`${img_url}${movie.poster_path}`} alt={movie.title} />
-          <h3>{movie.title}</h3>
-          <p>Rating: {movie.vote_average}</p>
-          </Link>
+   
+
+<div className="movie-grid">
+        {movies.map((movie) => (
+          <div className="movie-card" key={movie.id}>
+            <Link to={`/movie/${movie.id}`} onClick={() => handleClick(movie)}>
+              <MovieCard movie={movie} />
+            </Link>
           </div>
-      ))}
+        ))}
+      </div>
+    
+     
+<Pagination page={page} setPage={setPage} />
 
-    </div>
-
-<div className="pagination">
-<button disabled={page === 1} onClick={() => setPage((p) => p - 1)}>◀ Prev</button>
-<span>Page {page}</span>
-<button onClick={() => setPage((p) => p + 1)}>  Next ▶</button>
-</div>
 </>
   );
 };

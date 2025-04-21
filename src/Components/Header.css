@@ -1,38 +1,50 @@
 .header {
-  width: 100%; 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #121212;
-  padding: 0.6rem 1.5rem;
+  background-color:#121212;
   color: white;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  height: 60px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  padding: 1rem 2rem;
+  position: relative;
 }
 
 .logo {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
+  text-decoration: none;
   color: white;
-  margin-left: 60px;
 }
 
-.tag {
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+
+.menu {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-  margin-left: 500px;
+  gap: 2rem;
 }
 
-.tag a {
-  text-decoration: none;
+.menu .tag {
+  display: flex;
+  gap: 1rem;
+}
+
+.menu .tag a {
   color: #ccc;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: color 0.3s ease;
+  text-decoration: none;
 }
 
 .tag a:hover {
@@ -42,32 +54,64 @@
 
 .search {
   display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin-right: 150px;
+  gap: 0.5rem;
 }
 
 .search input {
-  padding: 0.3rem 0.6rem;
-  width: 140px;
-  border-radius: 4px;
+  padding: 0.5rem;
   border: none;
-  outline: none;
-  font-size: 0.9rem;
+  border-radius: 4px;
   color: #121212;
   background-color: white;
 }
 
 .search button {
+  padding: 0.5rem 1rem;
   background-color: #444;
   color: white;
   border: none;
-  padding: 0.3rem 0.7rem;
-  font-size: 0.9rem;
   border-radius: 4px;
   cursor: pointer;
 }
-
 .search button:hover {
   background-color: #666;
+}
+
+
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    background-color: #111;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    padding: 1rem;
+    z-index: 999;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+  .menu .tag {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search {
+    flex-direction: column;
+  }
+
+  .search input,
+  .search button {
+    width: 100%;
+  }
 }
