@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import MovieCard from './MovieCard'; 
+import Pagination from './Pagination';
 
 
 
@@ -37,11 +38,7 @@ function TopRated(props) {
         ))}
       </div>
 
-    <div className="pagination">
-<button disabled={page === 1} onClick={() => setPage((p) => p - 1)}> ◀ Prev  </button>
-<span>Page {page}</span>
-<button onClick={() => setPage((p) => p + 1)}>  Next ▶ </button>
-</div>
+      <Pagination page={page} setPage={setPage} />
     </>
   );
 };
